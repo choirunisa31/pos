@@ -10,14 +10,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name='csrf-token' content="{{ csrf_token() }}">
 
-        <link rel="shortcut icon" href="{{asset('/images/favicon.png')}}">
+        <link rel="shortcut icon" href="assets/images/favicon.png">
 
-        <link href="{{asset('/css/app.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('/css/icons.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('/css/style.css')}}" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{{ asset('/plugins/morris/morris.css') }}">
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
     </head>
-    <body class="fixed-left">
+    <body>
         <!-- Loader -->
         <div id="preloader">
             <div id="status">
@@ -31,15 +37,13 @@
             </div>
         </div>
 
-        <!-- Begin page -->
         <div id="app">
-            <!-- ========== Left Sidebar Start ========== -->
-            <app></app>
+            <auth-page></auth-page>
         </div>
-        <!-- END wrapper -->
 
         <!-- jQuery  -->
         <script src="{{asset('/js/jquery.min.js')}}"></script>
+        <script src="{{asset('/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('/js/modernizr.min.js')}}"></script>
         <script src="{{asset('/js/detect.js')}}"></script>
         <script src="{{asset('/js/fastclick.js')}}"></script>
@@ -48,9 +52,6 @@
         <script src="{{asset('/js/waves.js')}}"></script>
         <script src="{{asset('/js/jquery.nicescroll.js')}}"></script>
         <script src="{{asset('/js/jquery.scrollTo.min.js')}}"></script>
-        <script src="{{asset('plugins/alertify/js/alertify.js')}}"></script>
-        <script src="{{ asset('plugins/morris/morris.min.js') }}"></script>
-        <script src="{{ asset('plugins/raphael/raphael.min.js') }}"></script>
 
         <!-- App js -->
         <script src="{{mix('/js/app.js')}}"></script>
