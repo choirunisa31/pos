@@ -14,8 +14,17 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('invoice');
+            $table->unsignedBigInteger('user_id');
+            $table->float('total');
+            $table->float('bayar');
+            $table->float('kembalian');
+            $table->enum('payment_method', ['Uang Cash']);
+            $table->unsignedBigInteger('customer_id');
             $table->timestamps();
+
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 

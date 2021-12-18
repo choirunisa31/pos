@@ -9,9 +9,11 @@ use App\Model\Category;
 use App\Model\Customer;
 use Barryvdh\DomPDF\PDF;
 use App\Model\Transaction;
+use Illuminate\Http\Request;
+use App\Model\TransactionDetail;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {

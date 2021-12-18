@@ -14,7 +14,10 @@ class CreateDiscountTable extends Migration
     public function up()
     {
         Schema::create('discount', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('product_id');
+            $table->float('amount');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
